@@ -15,6 +15,14 @@ export const getOne = () => {
 
 
 export const create = async (data) => {
+       //check if the category is written correctly
+       //let category = data.category.toLowerCase...
+       //let categories = [...];
+       //if(!categories.includes(category)){
+       //        throw new Error('This category doesnt exist')
+       // } else {
+
+       // }
        const result = await request.post(`${baseUrl}/${data.category}/info`,data);
        return result;
 }
