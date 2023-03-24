@@ -1,0 +1,54 @@
+
+.welcome h1{
+    font-size: 66px;
+    color: white;
+    width: 38%;
+    margin: 0;
+    padding: 200px 0 80px 100px;
+
+}
+
+.welcome{
+    color: #e7971f;
+    width: 60%;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+h2{
+    text-align: center;
+    font-family: 'PT Serif',serif;
+    font-size: 32px;
+    font-style: italic;
+    letter-spacing: 2px;
+}
+
+.welcome p{
+    text-align: center;
+
+}
+
+/*recipes*/
+.recipes{
+    font-family: 'PT Serif',serif;
+    color: white;
+    background: #cf3709af;
+    padding: 20px 30px;
+}
+.recipes img{
+    width: 70px;
+    
+}
+.recipes li{
+    width: 28%;
+    text-align:center;
+    padding: 20px 30px;
+    display: inline-block;
+    text-decoration: none;
+
+}
+.recipes a{
+    color: white;  
+    font-family: 'PT Serif',serif;
+    text-decoration: none;
+}

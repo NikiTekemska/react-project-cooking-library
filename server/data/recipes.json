@@ -1,0 +1,182 @@
+{
+    "desserts": {
+        "name": "desserts",
+        "image": "https://cdn.loveandlemons.com/wp-content/uploads/2021/06/summer-desserts-500x500.jpg",
+        "info": {
+            "Cheesecake": {
+                "name": "Cheesecake",
+                "image": "https://www.glorioustreats.com/wp-content/uploads/2017/05/cheesecake-recipe-square.jpeg",
+                "ingredients": "cheese",
+                "timePreparation": "1 hr 42 mins",
+                "preparation": "",
+                "countryOfOrigin": ""
+            },
+            "Tiramisu": {
+                "name": "Tiramisu",
+                "image": "https://bakeplaysmile.com/wp-content/uploads/2022/06/tiramisu-square.jpg",
+                "ingredients": "cheese",
+                "timePreparation": "1 hr 42 mins",
+                "preparation": "",
+                "countryOfOrigin": ""
+            },
+            "Souffle": {
+                "name": "Souffle",
+                "image": "https://sallysbakingaddiction.com/wp-content/uploads/2021/01/chocolate-souffle-2.jpg",
+                "ingredients": "cheese",
+                "timePreparation": "1 hr 42 mins",
+                "preparation": "",
+                "countryOfOrigin": ""
+            }
+        }
+    },
+    "meat": {
+        "name": "meat",
+        "image": "https://imageio.forbes.com/specials-images/imageserve/601063988/960x0.jpg?format=jpg&width=960",
+        "info": {
+            "Cheesecake": {
+                "name": "",
+                "image": "",
+                "ingredients": "cheese",
+                "timePreparation": "1 hr 42 mins",
+                "preparation": "",
+                "countryOfOrigin": ""
+            },
+            "Tiramisu": {
+                "name": "",
+                "image": "",
+                "ingredients": "cheese",
+                "timePreparation": "1 hr 42 mins",
+                "preparation": "",
+                "countryOfOrigin": ""
+            },
+            "Birthday cake": {
+                "name": "",
+                "image": "",
+                "ingredients": "cheese",
+                "timePreparation": "1 hr 42 mins",
+                "preparation": "",
+                "countryOfOrigin": ""
+            }
+        }
+    },
+    "fish": {
+        "name": "fish",
+        "image": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/727bda84826873.5d6906eb29c0a.jpg",
+        "info": {
+            "Cheesecake": {
+                "name": "",
+                "image": "",
+                "ingredients": "cheese",
+                "timePreparation": "1 hr 42 mins",
+                "preparation": "",
+                "countryOfOrigin": ""
+            },
+            "Tiramisu": {
+                "name": "",
+                "image": "",
+                "ingredients": "cheese",
+                "timePreparation": "1 hr 42 mins",
+                "preparation": "",
+                "countryOfOrigin": ""
+            },
+            "Birthday cake": {
+                "name": "",
+                "image": "",
+                "ingredients": "cheese",
+                "timePreparation": "1 hr 42 mins",
+                "preparation": "",
+                "countryOfOrigin": ""
+            }
+        }
+    },
+    "salads": {
+        "name": "salads",
+        "image": "https://www.acouplecooks.com/wp-content/uploads/2019/05/Chopped-Salad-001_1.jpg",
+        "info": {
+            "Cheesecake": {
+                "name": "",
+                "image": "",
+                "ingredients": "cheese",
+                "timePreparation": "1 hr 42 mins",
+                "preparation": "",
+                "countryOfOrigin": ""
+            },
+            "Tiramisu": {
+                "name": "",
+                "image": "",
+                "ingredients": "cheese",
+                "timePreparation": "1 hr 42 mins",
+                "preparation": "",
+                "countryOfOrigin": ""
+            },
+            "Birthday cake": {
+                "name": "",
+                "image": "",
+                "ingredients": "cheese",
+                "timePreparation": "1 hr 42 mins",
+                "preparation": "",
+                "countryOfOrigin": ""
+            }
+        }
+    },
+    "vegan": {
+        "name": "vegan",
+        "image": "https://elavegan.com/wp-content/uploads/2022/01/Sweet-and-Sour-Chickpeas-over-rice-in-black-bowl.jpg",
+        "info": {
+            "Cheesecake": {
+                "name": "",
+                "image": "",
+                "ingredients": "cheese",
+                "timePreparation": "1 hr 42 mins",
+                "preparation": "",
+                "countryOfOrigin": ""
+            },
+            "Tiramisu": {
+                "name": "",
+                "image": "",
+                "ingredients": "cheese",
+                "timePreparation": "1 hr 42 mins",
+                "preparation": "",
+                "countryOfOrigin": ""
+            },
+            "Birthday cake": {
+                "name": "",
+                "image": "",
+                "ingredients": "cheese",
+                "timePreparation": "1 hr 42 mins",
+                "preparation": "",
+                "countryOfOrigin": ""
+            }
+        }
+    },
+    "pizza": {
+        "name": "pizza",
+        "image": "https://imgk.timesnownews.com/story/1549363752-pizza_pasta.PNG?tr=w-1200,h-900",
+        "info": {
+            "Cheesecake": {
+                "name": "",
+                "image": "",
+                "ingredients": "cheese",
+                "timePreparation": "1 hr 42 mins",
+                "preparation": "",
+                "countryOfOrigin": ""
+            },
+            "Tiramisu": {
+                "name": "",
+                "image": "",
+                "ingredients": "cheese",
+                "timePreparation": "1 hr 42 mins",
+                "preparation": "",
+                "countryOfOrigin": ""
+            },
+            "Birthday cake": {
+                "name": "",
+                "image": "",
+                "ingredients": "cheese",
+                "timePreparation": "1 hr 42 mins",
+                "preparation": "",
+                "countryOfOrigin": ""
+            }
+        }
+    }
+}

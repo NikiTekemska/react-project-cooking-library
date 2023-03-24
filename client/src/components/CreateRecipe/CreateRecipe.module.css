@@ -1,0 +1,8 @@
+.CreateRecipe{
+    display: inline-table;
+    font-style:italic;
+    box-sizing: content-box;
+    margin-left: 40%;
+    height: 600px;
+
+} 
