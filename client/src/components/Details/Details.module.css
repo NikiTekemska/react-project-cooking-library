@@ -1,0 +1,40 @@
+.Details{
+    margin-left: 50px;
+    text-align:center;
+    width: auto;
+    height: auto;
+    display: inline-block;
+    position: relative;
+    border-radius: 20px;
+    margin-top: 30px;
+    padding: 40px;
+    box-sizing:border-box;
+    background: #cf370991;
+    box-shadow: 14px 14px 30px #464a4e, -14px -14px 30px #464a4e;
+    justify-content: center;
+    font-style: italic;
+    font-family: 'PT Serif',serif;
+    color: white;
+    
+}
+
+.Details img {
+    width: 200px;
+    border-radius: 20px;
+    
+}
+
+.Details button{
+    color: white;
+    font-style: italic;
+    font-family: 'PT Serif',serif;
+    font-size: medium;
+    width: 100px;
+    display: inline;
+    margin-left: 20px;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
