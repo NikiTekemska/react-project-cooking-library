@@ -1,0 +1,23 @@
+.createComment{
+    box-sizing: content-box;
+}
+
+.comment {
+    border-radius: 20px;
+    height: auto;
+    text-align: center;
+    margin-left: 55%;
+
+}
+
+.btnSubmit{
+    font-style: italic;
+    font-family: 'PT Serif',serif;
+    font-size: medium;
+    background-color: #cf370991;
+    color: white;
+}
+
+.btnSubmit:hover{
+    cursor: pointer;
+}
