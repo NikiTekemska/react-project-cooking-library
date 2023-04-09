@@ -1,0 +1,43 @@
+.recipes h1{
+    font-style: italic;
+    font-family: 'PT Serif',serif;
+    color: white;
+    padding: 20px 30px;
+    text-align: center;
+    
+}
+.recipes img{
+    width: 200px;
+    height: 150px;
+    border-radius: 20px;
+    
+}
+
+.recipes ul{
+    margin-left: 110px;
+
+}
+.recipes li{
+    width: 28%;
+    text-align:center;
+    font-family: 'PT Serif',serif;
+    padding: 20px 30px;
+    display: inline-block;
+    box-sizing: border-box;
+    background: #cf370991;
+    box-shadow: 14px 14px 30px #464a4e, -14px -14px 30px #464a4e;
+    justify-content: center;
+    border-radius: 20px;
+    margin-right: 30px;
+    margin-top: 20px;
+    
+    
+}
+.recipes a{
+    color: white;  
+    font-family: 'PT Serif',serif;
+    text-decoration: none;
+    font-size: 25px;
+    font-style: italic;
+        
+}
