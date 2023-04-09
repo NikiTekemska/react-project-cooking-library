@@ -1,0 +1,40 @@
+.RecipeCard {
+    color:white;
+   display: inline-flex;
+    margin-left: 200px;
+    font-style: italic;
+    font-family: 'PT Serif',serif;
+
+   
+}
+
+.RecipeCard li {
+    margin-left: 10px;
+    text-align:center;
+    width: 200px;
+    height: auto;
+    display: inline;
+    position: relative;
+    border-radius: 20px;
+    padding: 20px;
+    box-sizing:content-box;
+    background: #cf370991;
+    box-shadow: 14px 14px 30px #464a4e, -14px -14px 30px #464a4e;
+    justify-content: center;
+    font-style: italic;
+    font-family: 'PT Serif',serif;
+    
+}
+
+.RecipeCard img {
+    width: 200px;
+    height: 150px;
+    border-radius: 20px;
+}
+
+.RecipeCard button {
+    color: white;
+    font-style: italic;
+    font-family: 'PT Serif',serif;
+    
+}
