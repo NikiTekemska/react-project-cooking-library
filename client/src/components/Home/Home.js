@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 export const Home = () => {
     return (
         <>
-            <section className="site-header">
+            <section className={styles.welcome}>
                 <h1>Suitable for all tastes</h1>
                 {/* <button>LEARN MORE</button> */}
             </section>
@@ -13,7 +13,7 @@ export const Home = () => {
                     <p>If you have ever heard some of the questions 'What are we going to eat?' 'Do we have anyting for dessert?' 'Are we going to eat these again?'
                         then you are in the right place!
                     </p>
-                    <p>If you are parent looking for a place where your child will grow the best, look further, talk to us now.
+                    <p>
                     </p>
                 </section>
                 <section className={styles.recipes}>
