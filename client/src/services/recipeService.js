@@ -1,28 +1,52 @@
-import * as request from "./requester";
-const baseUrl = 'http://localhost:3030/jsonstore/recipes';
-export const getAllCategory = async () => {
-       const recipes = await request('GET', baseUrl);
-       return recipes
-};
+import { requestFactory } from "./requester";
 
-export const getCategoryRecipes = () => {
+const baseUrl = 'http://localhost:3030/data/recipe';
 
-};
-
-export const getOne = () => {
-
-};
+export const recipeServiceFactory = (token) => {
+       const request = requestFactory(token);
 
 
-export const create = async (data) => {
-       //check if the category is written correctly
-       //let category = data.category.toLowerCase...
-       //let categories = [...];
-       //if(!categories.includes(category)){
-       //        throw new Error('This category doesnt exist')
-       // } else {
+       const getAll = async (category) => {
+              const query = encodeURIComponent(`category="${category}"`);
+              const result = await request.get(`${baseUrl}?where=${query}`);
 
-       // }
-       const result = await request.post(`${baseUrl}/${data.category}/info`,data);
-       return result;
+              return result;
+       };
+
+       const getOne = async (recipeId) => {
+              const result = await request.get(`${baseUrl}/${recipeId}`);
+              return result;
+
+       };
+       const getAllMine = async (ownerId) => {
+              const query = encodeURIComponent(`_ownerId="${ownerId}"`);
+
+              const result = await request.get(`${baseUrl}?where=${query}`);
+
+              return result;
+       };
+
+
+       const create = async (data) => {
+              const result = await request.post(`${baseUrl}`, data);
+              return result;
+       }
+
+       const deleteOne = (recipeId) => {
+              request.del(`${baseUrl}/${recipeId}`);
+       }
+
+       const edit = (recipeId, value) => {
+
+              request.put(`${baseUrl}/${recipeId}`, value)
+       }
+
+       return {
+              getOne,
+              create,
+              getAll,
+              getAllMine,
+              deleteOne,
+              edit
+       }
 }
