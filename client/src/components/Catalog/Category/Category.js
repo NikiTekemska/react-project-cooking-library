@@ -1,16 +1,17 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import styles from './Category.module.css';
-import { CategoryRecipes } from "../CategoryRecipes/CategoryRecipes";
+import { RecipeCard } from "../RecipeCard/RecipeCard";
+import { useService } from "../../../hooks/useService";
+import { recipeServiceFactory } from "../../../services/recipeService";
 
 export const Category = () => {
-    const baseUrl = 'http://localhost:3030/data/recipes'
     const { category } = useParams();
-    const [categoryRecipes, setCategoryRecipes] = useState({});
+    const [categoryRecipes, setCategoryRecipes] = useState([]);
+    const recipeService = useService(recipeServiceFactory)
 
     useEffect(() => {
-        fetch(`${baseUrl}/${category}`)
-            .then(res => res.json())
+        recipeService.getAll(category)
             .then(data => {
                 setCategoryRecipes(data);
             })
@@ -19,11 +20,11 @@ export const Category = () => {
     return (
         <>
             <div className={styles.categoryName}>
-                <h1>{categoryRecipes.name}</h1>
-                <img className={styles.categoryImg} src={categoryRecipes.image} alt="img" />
-                <h3>Best way to finish your meal.</h3>
+                <h1>{category}</h1>
+                {/* <img className={styles.categoryImg} src={categoryRecipes.image} alt="img" /> */}
+                {/* <h3>Best way to finish your meal.</h3> */}
             </div>
-            <CategoryRecipes baseUrl={baseUrl} />
+            <div>{categoryRecipes.map(x => <RecipeCard key={x._id} {...x} />)}</div>
 
         </>
     )
