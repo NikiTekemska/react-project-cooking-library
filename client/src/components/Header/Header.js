@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Header.module.css';
 
-import { AuthContext } from '../contexts/AuthContext';
+import { AuthContext } from '../../contexts/AuthContext'; 
 
 export const Header = () => {
 
@@ -23,7 +23,7 @@ export const Header = () => {
                         <div>
                             <li><Link to="/myRecipes">My Recipes</Link></li>
                             <li><Link to="/create">Create Recipe</Link></li>
-                            <li><Link to="/recipes">Logout</Link></li>
+                            <li><Link to="/logout">Logout</Link></li>
                         </div>
                     )}
 
