@@ -1,78 +1,56 @@
 import './App.css';
-import * as recipeService from './services/recipeService';
+import { Route, Routes } from 'react-router-dom';
+
 import { Header } from './components/Header/Header';
 import { Login } from './components/Login/Login';
-import { Route, Routes, useNavigate } from 'react-router-dom';
 import { Register } from './components/Register/Register';
 import { Home } from './components/Home/Home';
-import { Recipes } from './components/Recipes/Recipes';
-import { Category } from './components/Category/Category';
-import { useState, useEffect } from 'react';
+import { RecipesCategory } from './components/Catalog/RecipesCategory/RecipesCategory';
+import { Category } from './components/Catalog/Category/Category';
 import { Details } from './components/Details/Details';
 import { CreateRecipe } from './components/CreateRecipe/CreateRecipe';
+import { Logout } from './components/Logout';
+import { Edit } from './components/Edit/Edit';
+import { MyRecipes } from './components/MyRecipes/MyRecipes';
 
-import { AuthContext } from './components/contexts/AuthContext';
-import * as authService from './services/authService';
+import { AuthProvider } from './contexts/AuthContext';
+import { RecipeProvider } from './contexts/RecipesContext'
+import { RouteGuard } from './components/RouteGuard/RouteGuard';
+
 
 
 function App() {
-  const navigate = useNavigate();
-  // const [recipes, setRecipes] = useState([]);
-  // useEffect(()=>{
-  //     recipeService.getAll()
-  //       .then(result => {
-  //         setRecipes(result);
-  //       })
-  // },[]);
-  const [auth, setAuth] = useState({});
-
-  const onCreateSubmit = async (data) => {
-    const newRecipe = await recipeService.create(data);
-
-    //set the new recipe to the state
-    //navigate to the recipesCatalog
-  };
-
-  const onLoginSubmit = async (data) => {
-    try {
-      const result = await authService.login(data);
-      setAuth(result);
-    } catch (error) {
-      console.log(`Failed to login`);
-    }
-    navigate('/home');
-
-  };
-
-
-  const context = {
-    onLoginSubmit,
-    userId: auth._id,
-    token: auth.accessToken,
-    userEmail: auth.email,
-    isAuthenticated:!!auth.accessToken
-    
-  }; 
 
   return (
-    <AuthContext.Provider value={context}>
-      <div>
+    <AuthProvider >
+      <RecipeProvider>
+        <div>
 
-        < Header />
-        <main>
-          <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/login' element={<Login />} />
-            <Route path='/register' element={<Register />} />
-            <Route path='/recipes' element={<Recipes />} />
-            <Route path='/create' element={<CreateRecipe onCreateSubmit={onCreateSubmit} />} />
-            <Route path='/recipes/:category/' element={<Category />} />
-            <Route path='/recipes/:category/*' element={<Details />} />
-          </Routes>
-        </main>
+          < Header />
+          <main>
+            <Routes>
+              <Route path='/' element={<Home />} />
+              <Route path='/login' element={<Login />} />
+              <Route path='/logout' element={<Logout />} />
+              <Route path='/register' element={<Register />} />
+              <Route path='/recipes' element={<RecipesCategory />} />
+              <Route path='/myRecipes' element={<MyRecipes />} />
+              <Route path='/myRecipes/:recipeId' element={<Details />} />
+              <Route path='/recipes/:category' element={<Category />} />
 
-      </div>
-    </AuthContext.Provider>
+              <Route element={<RouteGuard />}>
+                <Route path='/create' element={<CreateRecipe />} />
+                <Route path='/recipes/:category/:recipeId' element={<Details />} />
+                <Route path='/recipes/:category/:recipeId/edit' element={<Edit />} />
+              </Route>
+              
+              
+            </Routes>
+          </main>
+
+        </div>
+      </RecipeProvider>
+    </AuthProvider>
   );
 }
 
