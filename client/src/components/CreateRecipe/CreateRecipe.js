@@ -1,49 +1,53 @@
-import { useState } from "react";
+import { RecipeContext } from "../../contexts/RecipesContext";
+import { useForm } from "../../hooks/useForm";
 import styles from './CreateRecipe.module.css';
-export const CreateRecipe = ({
-    onCreateSubmit
-}) => {
-    const [values, setValues] = useState({
-        name:'',
-        category:'',
-        timePreparation:'',
-        ingridients:'',
-        preparation:'',
-        image:''
-    });
+import { useContext } from "react";
 
-    const onCreateHandler = (e) => {
-        setValues(state => ({...state, [e.target.name]:e.target.value}))
-    }
+export const CreateRecipe = () => {
+    const { onCreateSubmit } = useContext(RecipeContext)
+    const { values, changeHandler, onSubmit } = useForm({
+        title: '',
+        category: '',
+        timePreparation: '',
+        ingridients: '',
+        preparation: '',
+        image: ''
+    }, onCreateSubmit);
 
-    const onSubmit= (e) => {
-        e.preventDefault();
-        onCreateSubmit(values);
-    };
-    return(
+
+    return (
         <section id="create-page" className="auth">
-             <form id="create" onSubmit={onSubmit} className={styles.CreateRecipe}>
+            <form id="create" method="post" onSubmit={onSubmit} className={styles.CreateRecipe}>
                 <div className="container">
                     <h1>Create Recipe</h1>
 
                     <label htmlFor="title">Title:</label>
-                    <input value={values.name} onChange={onCreateHandler} type="text" id="title" name="name" placeholder="Enter game title..." />
+                    <input value={values.title} onChange={changeHandler} type="text" id="title" name="title" placeholder="Enter recipe..." />
 
-                    <label htmlFor="category">Category:</label>
-                    <input value={values.category} onChange={onCreateHandler} type="text" id="category" name="category" placeholder="Enter category..." />
+                    <label htmlFor="cars">Category:</label>
+
+                    <select className={styles.category} name="category" value={values.category} onChange={changeHandler} >
+                        <option value="Desserts">Desserts</option>
+                        <option value="Salads">Salads</option>
+                        <option value="Vegan">Vegan</option>
+                        <option value="Meat">Meat&BBQ</option>
+                        <option value="Fish">Fish&Chips</option>
+                        <option value="Pizza">Pizza&Pasta</option>
+
+                    </select>
 
                     <label htmlFor="timePreparation">Time preparation:</label>
-                    <input value={values.timePreparation} onChange={onCreateHandler} type="text" id="timePreparation" name="timePreparation" min="1" placeholder="1" />
+                    <input value={values.timePreparation} onChange={changeHandler} type="text" id="timePreparation" name="timePreparation" min="1" placeholder="1" />
 
                     <label htmlFor="ingridients">Ingridients:</label>
-                    <input value={values.ingridients} onChange={onCreateHandler} type="text" id="ingridients" name="ingridients" min="1" placeholder="1" />
+                    <input value={values.ingridients} onChange={changeHandler} type="text" id="ingridients" name="ingridients" min="1" placeholder="1" />
 
                     <label htmlFor="img">Image:</label>
-                    <input value={values.image} onChange={onCreateHandler} type="text" id="imageUrl" name="image" placeholder="Upload a photo..." />
+                    <input value={values.image} onChange={changeHandler} type="text" id="imageUrl" name="image" placeholder="Upload a photo..." />
 
                     <label htmlFor="preparation">Prearation:</label>
-                    <textarea name="preparation" id="preparation" value={values.preparation} onChange={onCreateHandler}></textarea>
-                    <input className="btn submit" type="submit" value="Create Recipe" />
+                    <textarea className={styles.preparation} name="preparation" id="preparation" value={values.preparation} onChange={changeHandler}></textarea>
+                    <input className={styles.btnSubmit} type="submit" value="Create Recipe" />
                 </div>
             </form>
         </section>
