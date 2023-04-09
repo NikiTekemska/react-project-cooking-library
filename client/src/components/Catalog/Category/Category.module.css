@@ -10,15 +10,16 @@
     display: inline-block;
     text-align: center;
     position: relative;
-    width: 200px;
-    height: 300px;
+    width: auto;
+    height: auto;
     border-radius: 20px;
     padding: 40px;
     box-sizing:content-box;
     background: #cf370991;
     box-shadow: 14px 14px 30px #464a4e, -14px -14px 30px #464a4e;
     justify-content: center;
+    margin-top: 5%;
     margin-left: 40%;
     font-style: italic;
-    
+    font-family: 'PT Serif',serif;
 }
