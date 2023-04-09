@@ -2,7 +2,8 @@ import styles from './Login.module.css';
 import { useContext } from 'react';
 import { useForm } from '../../hooks/useForm';
 
-import { AuthContext } from '../contexts/AuthContext';
+import { AuthContext } from '../../contexts/AuthContext';
+import { Link } from 'react-router-dom';
 
 export const Login = () => {
     const { onLoginSubmit } = useContext(AuthContext);
@@ -29,7 +30,7 @@ export const Login = () => {
                 <button className="btn" type="submit">Login</button>
 
                 <p className="field">
-                    <span>If you don't have profile click <a href="#">here</a></span>
+                    <span>If you don't have profile click <Link to='/register'>here</Link></span>
                 </p>
             </form>
         </section>
