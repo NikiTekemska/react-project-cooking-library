@@ -1,0 +1,31 @@
+.EditRecipe{
+    display: inline-table;
+    font-style:italic;
+    font-family: 'PT Serif',serif;
+    box-sizing: content-box;
+    margin-top: 3%;
+    margin-left: 33%;
+    height: 600px;
+    color: white;
+} 
+
+.btnSubmit {
+    color: white;
+    background-color: #cf370991;
+    font-style: italic;
+    font-size: medium;
+    font-family: 'PT Serif',serif;
+    
+}
+.preparation {
+    border-radius: 20px;
+    width: 400px;
+    height: 200px;
+}
+
+.category{
+    border-radius: 20px;
+    height: 30px;
+    width: 200px;
+    text-align: center;
+}
