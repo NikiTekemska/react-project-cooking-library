@@ -1,0 +1,33 @@
+{
+  "cat.1":{
+      "_id": "todo_1",
+      "title": "Desserts",
+      "image": "https://cdn.loveandlemons.com/wp-content/uploads/2021/06/summer-desserts-500x500.jpg"
+  },
+  "cat.2":{
+      "_id": "todo_2",
+      "title": "Vegan",
+      "image": "https://elavegan.com/wp-content/uploads/2022/01/Sweet-and-Sour-Chickpeas-over-rice-in-black-bowl.jpg"
+  },
+  "cat.3": {
+      "_id": "todo_3",
+      "title": "Salads",
+      "image": "https://www.acouplecooks.com/wp-content/uploads/2019/05/Chopped-Salad-001_1.jpg"
+  },
+  "cat.4": {
+      "_id": "todo_4",
+      "title": "Pizza&Pasta",
+      "image": "https://imgk.timesnownews.com/story/1549363752-pizza_pasta.PNG?tr=w-1200,h-900"
+  },
+  "cat.5": {
+      "_id": "todo_5",
+      "title": "Meat&BBQ",
+      "image": "https://imageio.forbes.com/specials-images/imageserve/601063988/960x0.jpg?format=jpg&width=960"
+  },
+  "cat.6": {
+      "_id": "todo_6",
+      "title": "Fish&chips",
+      "image":"https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/727bda84826873.5d6906eb29c0a.jpg"
+  }
+  
+}
