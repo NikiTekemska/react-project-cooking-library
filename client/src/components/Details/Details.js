@@ -78,7 +78,7 @@ export const Details = () => {
                     <ul>
                         {currentRecipe.comments && currentRecipe.comments.map(x => (
                             <li key={x._id} className="comment">
-                                <p>{userEmail}: {x.comment}</p>
+                                <p>{x.author.email}: {x.comment}</p>
                             </li>
                         ))}
                     </ul>
