@@ -82,6 +82,9 @@ export const Details = () => {
                             </li>
                         ))}
                     </ul>
+                    {!currentRecipe.comments?.length && (
+                        <p className="no-comment">No comments.</p>
+                    )}
 
                 </div>
 
