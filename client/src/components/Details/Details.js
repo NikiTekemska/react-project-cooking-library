@@ -8,6 +8,7 @@ import { AuthContext } from "../../contexts/AuthContext";
 import * as commentService from '../../services/commentService';
 
 import { AddComment } from "./AddComment/AddComment";
+import { DeleteModal } from "./DeleteModal";
 
 
 
@@ -17,7 +18,7 @@ export const Details = () => {
     const recipeService = useService(recipeServiceFactory);
     const { category, recipeId } = useParams();
     const navigate = useNavigate();
-
+    const [showDelete, setShowDelete] = useState(null);
     useEffect(() => {
         Promise.all([
             recipeService.getOne(recipeId),
@@ -37,7 +38,15 @@ export const Details = () => {
         const response = await commentService.create(recipeId, values.comment);
         setCurrentRecipe(state => ({
             ...state,
-            comments: [...state.comments, response]
+            comments: [
+                ...state.comments,
+                {
+                    ...response,
+                    author: {
+                        userEmail
+                    }
+                }
+            ]
         }));
 
     }
@@ -47,14 +56,27 @@ export const Details = () => {
 
         // const result = confirm(`Are ypu sure you want to delete this ?`)
 
-        recipeService.deleteOne(recipeId);
+        await recipeService.deleteOne(recipeId);
 
         // delete from the state
         navigate('/recipes');
 
     }
+    
+    const onClose = () => { 
+        setShowDelete(null); 
+    };
+    const onDeleteClick = (userId) => {
+        setShowDelete(userId);
+    };
+
+    const onDeleteHandler = () => {
+        onDelete(showDelete);
+        onClose();
+    };
 
     return (
+    <>{showDelete && <DeleteModal onClose={onClose} onDelete={onDeleteHandler} />}
         <section >
             <div className={styles.Details}>
 
@@ -70,7 +92,7 @@ export const Details = () => {
                 {isOwner && (
                     <div className="buttons">
                         <Link to={`/recipes/${category}/${recipeId}/edit`} className="button"><button>Edit</button> </Link>
-                        <button href="#" className="button" onClick={onDelete}>Delete</button>
+                        <button href="#" className="button" onClick={onDeleteClick}>Delete</button>
                     </div>)}
 
                 <div className="details-comments">
@@ -79,6 +101,11 @@ export const Details = () => {
                         {currentRecipe.comments && currentRecipe.comments.map(x => (
                             <li key={x._id} className="comment">
                                 <p>{x.author.email}: {x.comment}</p>
+                                {/* {x.author.email == userEmail && (
+                                   <div> <button>Edit</button>
+                                    <button>Delete</button>
+                                    <div>
+                                )} */}
                             </li>
                         ))}
                     </ul>
@@ -91,5 +118,6 @@ export const Details = () => {
             </div>
             {isAuthenticated && <AddComment onCommentSubmit={onCommentSubmit} />}
         </section>
+    </>
     )
 }
