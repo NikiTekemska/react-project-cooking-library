@@ -1,0 +1,26 @@
+.overlay {
+    box-sizing:content-box;
+    background: #cf370991;
+    box-shadow: 14px 14px 30px #464a4e, -14px -14px 30px #464a4e;
+    color: white;
+    height: auto;
+    width: auto;
+    /* display: grid; */
+    position:relative;
+    border-radius: 20px;
+}
+.overlay confirmContainer{
+    display: grid
+}
+
+.overlay button {
+    width: 200px;
+    height: 50px;
+    display:inline-table;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-style: italic;
+    font-family: 'PT Serif',serif;
+    position:static;
+}
