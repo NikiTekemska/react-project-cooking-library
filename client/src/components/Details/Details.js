@@ -100,7 +100,7 @@ export const Details = () => {
                     <ul>
                         {currentRecipe.comments && currentRecipe.comments.map(x => (
                             <li key={x._id} className="comment">
-                                <p>{x.author.email}: {x.comment}</p>
+                                <p>{x.author.email ? x.author.email : x.author.userEmail}: {x.comment}</p>
                                 {/* {x.author.email == userEmail && (
                                    <div> <button>Edit</button>
                                     <button>Delete</button>
