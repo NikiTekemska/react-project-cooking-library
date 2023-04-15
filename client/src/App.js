@@ -12,6 +12,7 @@ import { CreateRecipe } from './components/CreateRecipe/CreateRecipe';
 import { Logout } from './components/Logout';
 import { Edit } from './components/Edit/Edit';
 import { MyRecipes } from './components/MyRecipes/MyRecipes';
+import { SearchedRecipes } from './components/Header/SearchedRecipes';
 
 import { AuthProvider } from './contexts/AuthContext';
 import { RecipeProvider } from './contexts/RecipesContext'
@@ -34,6 +35,7 @@ function App() {
               <Route path='/logout' element={<Logout />} />
               <Route path='/register' element={<Register />} />
               <Route path='/recipes' element={<RecipesCategory />} />
+              <Route path='/search' element={<SearchedRecipes/>} />
               <Route path='/myRecipes' element={<MyRecipes />} />
               <Route path='/myRecipes/:recipeId' element={<Details />} />
               <Route path='/recipes/:category' element={<Category />} />
@@ -55,3 +57,4 @@ function App() {
 }
 
 export default App;
+
