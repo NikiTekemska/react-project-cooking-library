@@ -1,0 +1,32 @@
+.Search {
+    float: right;
+    width: 200px;
+    height: 40px;
+    display: inline-flex;
+    padding: 6px;
+    border: none;
+    margin-top: 3px;
+    box-sizing: content-box;
+    margin-right: 16px;
+    font-size: 17px;
+  
+}
+
+.Search input{
+margin-top: 1px;
+height: auto;
+}
+
+.Search button {
+float: right;
+padding: 6px 10px;
+width: 30px;
+height:auto;
+margin-top: 1px;
+margin-left: 2px;
+margin-right: 5px;
+background: #ddd;
+font-size: 17px;
+border: none;
+cursor: pointer;
+}
