@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext, useEffect,useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { recipeServiceFactory } from "../services/recipeService";
 
@@ -7,8 +7,27 @@ export const RecipeProvider = ({
     children
 }) => {
     const navigate = useNavigate();
-    //const [recipes, setRecipes] = useState([]);
-    const recipeService = recipeServiceFactory();//auth.accessToken
+    const [recipes, setRecipes] = useState([]);
+    const [matches, setMatch] = useState([]);
+    const recipeService = recipeServiceFactory();
+
+    useEffect(()=>{
+        recipeService.getAll()
+            .then(data => {
+                setRecipes(data)
+            });
+    },[])
+
+    const onSearchSubmit = (data) => {
+        console.log(data.search);
+        if(!data.search){
+        return {};
+        }
+        setMatch(recipes.filter(recipe => recipe.title.match(data.search)));
+    
+        navigate("/search");
+        
+    };
 
 
     const onCreateSubmit = async (data) => {
@@ -31,8 +50,10 @@ export const RecipeProvider = ({
         navigate(`recipes/${values.category}/`);//${values._id}
     }
     const contextValues = {
+        matches,
         onCreateSubmit,
-        onEditSubmit
+        onEditSubmit,
+        onSearchSubmit
 
     }
     return (
