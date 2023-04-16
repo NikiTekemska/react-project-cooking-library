@@ -2,7 +2,8 @@ import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Header.module.css';
 
-import { AuthContext } from '../../contexts/AuthContext'; 
+import { AuthContext } from '../../contexts/AuthContext';
+import { SearchBar } from './SearchBar';
 
 export const Header = () => {
 
@@ -16,6 +17,7 @@ export const Header = () => {
                     <p>Cooking library</p>
                 </section>
                 <ul>
+                    <SearchBar/>
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/recipes">Recipes</Link></li>
 
