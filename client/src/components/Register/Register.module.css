@@ -21,3 +21,7 @@ form > h2 {
   text-align: center;
   color: white;
 }
+.btn{
+  background-color: #cf370991;
+  box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
+}
