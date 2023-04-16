@@ -13,14 +13,18 @@
 .btnSubmit {
     color: white;
     background-color: #cf370991;
+    box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
     font-style: italic;
     font-size: medium;
     font-family: 'PT Serif',serif;
+    transition: 0.5s;
     
 }
 
 .btnSubmit:hover{
     cursor: pointer;
+    box-shadow: none;
+    
 }
 
 .preparation {
