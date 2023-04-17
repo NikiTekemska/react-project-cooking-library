@@ -36,8 +36,8 @@ export const RecipeProvider = ({
         }
         const newRecipe = await recipeService.create(data)
 
-        //setRecipes(state => [...state, newRecipe]);
-        navigate('/recipes');
+        setRecipes(state => [...state, newRecipe]);
+        navigate(`/recipes/${data.category}`);
     };
 
 
