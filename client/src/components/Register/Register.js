@@ -33,7 +33,7 @@ export const Register = () => {
                     <input id="repeatPassword" name="repeatPassword" type="password" placeholder="********" value={values.repeatPassword} onChange={changeHandler}/>
                 </div>
 
-                <button className="btn" type="submit">Register</button>
+                <button className={styles.btn} type="submit">Register</button>
 
                 <p className="field">
                     <span>If you have profile click <Link to="/login">here</Link></span>
