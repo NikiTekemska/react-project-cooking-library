@@ -14,7 +14,9 @@ export const useLocalStorage = (key, initialValue) => {
 
         const setLocalStorageState = (value) => {
             setState(value);
-            //check if the value is function
+            if(value === {}){
+                localStorage.removeItem('auth');
+            }
 
             localStorage.setItem(key, JSON.stringify(value));
         }
