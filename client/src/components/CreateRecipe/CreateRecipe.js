@@ -30,9 +30,9 @@ export const CreateRecipe = () => {
                         <option value="Desserts">Desserts</option>
                         <option value="Salads">Salads</option>
                         <option value="Vegan">Vegan</option>
-                        <option value="Meat">Meat&BBQ</option>
-                        <option value="Fish">Fish&Chips</option>
-                        <option value="Pizza">Pizza&Pasta</option>
+                        <option value="Meat&BBQ">Meat&BBQ</option>
+                        <option value="Fish&Chips">Fish&Chips</option>
+                        <option value="Pizza&Pasta">Pizza&Pasta</option>
 
                     </select>
 
