@@ -19,7 +19,6 @@ export const RecipeProvider = ({
     },[])
 
     const onSearchSubmit = (data) => {
-        console.log(data.search);
         if(!data.search){
         return {};
         }
@@ -31,7 +30,7 @@ export const RecipeProvider = ({
 
 
     const onCreateSubmit = async (data) => {
-        if( data.title =="" || data.category=="" || data.timePreparation=="" || data.preparation == "" || data.ingredients == ""){
+        if( data.title ==="" || data.category==="" || data.timePreparation==="" || data.preparation === "" || data.ingredients === ""){
             return alert("You have missed to fill one filed!")
         }
         const newRecipe = await recipeService.create(data)
@@ -42,7 +41,7 @@ export const RecipeProvider = ({
 
 
     const onEditSubmit = async (values) => {
-        if( values.title =="" || values.category=="" || values.timePreparation=="" || values.preparation == "" || values.ingredients == ""){
+        if( values.title ==="" || values.category==="" || values.timePreparation==="" || values.preparation === "" || values.ingredients === ""){
             return alert("You have missed to fill one filed!")
         }
         await recipeService.edit(values._id, values);
