@@ -11,7 +11,7 @@ export const Category = () => {
     const recipeService = useService(recipeServiceFactory)
 
     useEffect(() => {
-        recipeService.getAll(category)
+        recipeService.getCategoryAll(category)
             .then(data => {
                 setCategoryRecipes(data);
             })
@@ -24,7 +24,9 @@ export const Category = () => {
                 {/* <img className={styles.categoryImg} src={categoryRecipes.image} alt="img" /> */}
                 {/* <h3>Best way to finish your meal.</h3> */}
             </div>
-            <div>{categoryRecipes.map(x => <RecipeCard key={x._id} {...x} />)}</div>
+            {(categoryRecipes.length === 0) ? <p className={styles.noRecipe}>No recipes yet!</p> :
+                <div>{categoryRecipes.map(x => <RecipeCard key={x._id} {...x} />)}</div>
+            }
 
         </>
     )
