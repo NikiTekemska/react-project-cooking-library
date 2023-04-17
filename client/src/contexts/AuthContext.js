@@ -38,7 +38,7 @@ export const AuthProvider = ({
     const { repeatPassword, ...registerData } = values;
 
     if (repeatPassword !== registerData.password) {
-      // alert('Repeat password doesn\'t match!')
+       alert('Repeat password doesn\'t match!')
       return;
     }
     try {
@@ -56,7 +56,7 @@ export const AuthProvider = ({
     try {
       await authService.logout();
     } catch(error) {
-      console.log(error)
+      console.log(error);
     }
     setAuth({});
   };
