@@ -5,8 +5,12 @@ const baseUrl = 'http://localhost:3030/data/recipe';
 export const recipeServiceFactory = (token) => {
        const request = requestFactory(token);
 
+       const getAll = async() =>{
+              const result = await request.get(baseUrl);
+              return result;
+       };
 
-       const getAll = async (category) => {
+       const getCategoryAll = async (category) => {
               const query = encodeURIComponent(`category="${category}"`);
               const result = await request.get(`${baseUrl}?where=${query}`);
 
@@ -43,8 +47,9 @@ export const recipeServiceFactory = (token) => {
 
        return {
               getOne,
-              create,
               getAll,
+              create,
+              getCategoryAll,
               getAllMine,
               deleteOne,
               edit
