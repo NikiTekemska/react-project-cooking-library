@@ -1,4 +1,4 @@
-import styles from './Recipes.module.css';
+import styles from './RecipesCategory.module.css';
 import { useEffect, useState } from 'react';
 import { CategoryCard } from '../CategoryCard/CategoryCard';
 
