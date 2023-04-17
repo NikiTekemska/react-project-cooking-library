@@ -1,19 +1,38 @@
-
+.main{
+    background: url(../../../public/Cooking\ Wallpapers\ \ \ Top\ Free\ Cooking\ Backgrounds.jpg);
+    background-size: cover;
+    
+}
 .welcome h1{
-    font-size: 60px;
+    font-size: 80px;
     color: white;
     width: 45%;
-    margin: 0;
-    
-    
+    margin-left: 20px;
+    font-style: italic;
+    font-family: 'PT Serif',serif;
 
 }
 
 .welcome{
     color: #e7971f;
     width: 60%;
-    margin: 0 auto;
-    padding: 20px 0;
+    /* margin: 20px; */
+    padding: 20px 0 0 0;
+
+    
+}
+
+.welcomeMessage{
+    color: white;
+    font-style: italic;
+    font-family: 'PT Serif',serif;
+    font-size: 20px;
+    width: 40%;
+    margin-left: 20px;
+    text-align: left;
+    
+    
+
 }
 
 h2{
