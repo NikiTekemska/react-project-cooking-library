@@ -36,5 +36,11 @@
     color: white;
     font-style: italic;
     font-family: 'PT Serif',serif;
+    background-color: #cf370991;
+    box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
     
+}
+
+button:hover{
+    box-shadow: none;
 }
