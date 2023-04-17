@@ -54,8 +54,6 @@ export const Details = () => {
     const isOwner = currentRecipe._ownerId === userId;
     const onDelete = async () => {
 
-        // const result = confirm(`Are ypu sure you want to delete this ?`)
-
         await recipeService.deleteOne(recipeId);
 
         // delete from the state
@@ -77,7 +75,7 @@ export const Details = () => {
 
     return (
     <>{showDelete && <DeleteModal onClose={onClose} onDelete={onDeleteHandler} />}
-        <section >
+        <section className={styles.Page}>
             <div className={styles.Details}>
 
                 <div >
