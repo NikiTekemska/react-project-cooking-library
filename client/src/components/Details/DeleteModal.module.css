@@ -8,6 +8,7 @@
     /* display: grid; */
     position:relative;
     border-radius: 20px;
+    text-align: center;
 }
 .overlay confirmContainer{
     display: grid
