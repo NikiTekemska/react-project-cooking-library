@@ -9,9 +9,10 @@ export const AddComment = ({
     }, onCommentSubmit)
     return (
         <article className={styles.createComment}>
-            <label>Add new comment:</label>
+            
             <form className={styles.comment} onSubmit={onSubmit}>
-                <textarea name="comment" placeholder="Comment......" value={values.comment} onChange={changeHandler}></textarea>
+                <label>Add new comment:</label>
+                <textarea className={styles.textBox} name="comment" placeholder="Comment......" value={values.comment} onChange={changeHandler}></textarea>
                 <input className={styles.btnSubmit} type="submit" value="Add Comment" />
             </form>
         </article>
