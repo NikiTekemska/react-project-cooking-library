@@ -31,7 +31,7 @@ export const RecipeProvider = ({
 
     const onCreateSubmit = async (data) => {
         if( data.title ==="" || data.category==="" || data.timePreparation==="" || data.preparation === "" || data.ingredients === ""){
-            return alert("You have missed to fill one filed!")
+            return alert("No empty fileds allowed!")
         }
         const newRecipe = await recipeService.create(data)
 
