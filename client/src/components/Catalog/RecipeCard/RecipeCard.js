@@ -19,7 +19,7 @@ export const RecipeCard = ({
                 <h1>{title}</h1>
                 <img src={image} alt="img" />
                 <h3>Time preparation: {timePreparation}</h3>
-                {isAuthenticated && (<Link to={`${_id}`} className="details-button"><button>Details</button></Link>)}
+                <Link to={`${_id}`} className="details-button"><button>Details</button></Link>
                 
                 
 
