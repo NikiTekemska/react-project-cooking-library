@@ -35,18 +35,19 @@ function App() {
               <Route path='/logout' element={<Logout />} />
               <Route path='/register' element={<Register />} />
               <Route path='/recipes' element={<RecipesCategory />} />
-              <Route path='/search' element={<SearchedRecipes/>} />
-              <Route path='/myRecipes' element={<MyRecipes />} />
-              <Route path='/myRecipes/:recipeId' element={<Details />} />
+              <Route path='/search' element={<SearchedRecipes />} />
+
               <Route path='/recipes/:category' element={<Category />} />
+              <Route path='/recipes/:category/:recipeId' element={<Details />} />
 
               <Route element={<RouteGuard />}>
                 <Route path='/create' element={<CreateRecipe />} />
-                <Route path='/recipes/:category/:recipeId' element={<Details />} />
+                <Route path='/myRecipes' element={<MyRecipes />} />
+                <Route path='/myRecipes/:recipeId' element={<Details />} />
                 <Route path='/recipes/:category/:recipeId/edit' element={<Edit />} />
               </Route>
-              
-              
+
+
             </Routes>
           </main>
 
