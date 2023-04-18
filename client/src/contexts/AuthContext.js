@@ -36,7 +36,10 @@ export const AuthProvider = ({
 
   const onRegisterSubmit = async (values) => {
     const { repeatPassword, ...registerData } = values;
-
+    if(repeatPassword === "" || registerData.password === "" || registerData.email === ""){
+      alert("No empty fileds allowed!")
+      return;
+    }
     if (repeatPassword !== registerData.password) {
        alert('Repeat password doesn\'t match!')
       return;
