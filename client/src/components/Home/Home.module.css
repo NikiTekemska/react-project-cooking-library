@@ -56,7 +56,9 @@ h2{
     padding: 20px 30px;
 }
 .recipes img{
-    width: 70px;
+    width: 150px;
+    height: 100px;
+    border-radius: 10px;
     
 }
 .recipes li{
