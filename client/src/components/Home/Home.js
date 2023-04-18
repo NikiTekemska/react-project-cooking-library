@@ -1,6 +1,19 @@
 import styles from './Home.module.css';
 import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { CategoryCard } from '../Catalog/CategoryCard/CategoryCard';
 export const Home = () => {
+    const baseUrl = 'http://localhost:3030/jsonstore/category'
+    const [category, setCategory] = useState([]);
+    useEffect(() => {
+        fetch(baseUrl)
+            .then(res => res.json())
+            .then(data => {
+                setCategory(Object.values(data));
+            })
+
+    }, []);
+
     return (
         <>
 
@@ -17,14 +30,15 @@ export const Home = () => {
                 <section className={styles.recipes}>
                     <h2>Recipes</h2>
                     <ul>
+                    {category.map(x => <CategoryCard key={x.title} {...x} />)}
 
-                        <li><Link to="/recipes/Salads">
+                        {/* <li><Link to="/recipes/Salads">
                             <img src="./Images/backpack.png" alt="pic" />
                             <h3>Salads</h3>
                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                                 Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-                        </Link></li>
-                        <li><Link to="/recipes/Desserts">
+                        </Link></li> */}
+                        {/* <li><Link to="/recipes/Desserts">
                             <img src="./Images/books.png" alt="pic" />
                             <h3>Desserts</h3>
                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -53,7 +67,7 @@ export const Home = () => {
                             <h3>Fish&Chips</h3>
                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                                 Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-                        </Link></li>
+                        </Link></li> */}
                     </ul>
                 </section>
 
